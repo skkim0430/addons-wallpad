@@ -8,6 +8,7 @@
     "armv7",
     "aarch64",
     "amd64",
+    "generic-x86-64",
     "i386"
   ],
   "url": "https://github.com/HAKorea/addons",
