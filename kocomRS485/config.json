@@ -3,14 +3,7 @@
   "version": "1.1.1",
   "slug": "kocom_wallpad",
   "description": "Kocom Wallpad Controller for Homeassistant",
-  "arch": [
-    "armhf",
-    "armv7",
-    "aarch64",
-    "amd64",
-    "generic-x86-64",
-    "i386"
-  ],
+  "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
   "url": "https://github.com/HAKorea/addons",
   "startup": "application",
   "boot": "auto",
