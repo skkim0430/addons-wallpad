@@ -37,17 +37,17 @@
     },
     "MQTT": {
       "anonymous": false,
-      "server": "192.168.x.x",
-      "username": "id",
-      "password": "pw"
+      "server": "172.30.1.3",
+      "username": "skkim0430",
+      "password": "skk6321"
     },
     "Wallpad": {
-      "light": false,
-      "plug": false,
-      "thermostat": false,
-      "fan": false,
-      "gas": false,
-      "elevator": false
+      "light": true,
+      "plug": true,
+      "thermostat": true,
+      "fan": true,
+      "gas": true,
+      "elevator": true
     },
     "Advanced": {
       "INIT_TEMP": 22,
@@ -64,54 +64,31 @@
       {
         "name": "bedroom",
         "number": 2
-      },
-      {
-        "name": "room1",
-        "number": 2
-      },
-      {
-        "name": "room2",
-        "number": 2
-      },
-      {
-        "name": "kitchen",
-        "number": 3
       }
+
     ],
     "KOCOM_PLUG_SIZE": [
       {
         "name": "livingroom",
-        "number": 3
+        "number": 2
       },
       {
         "name": "bedroom",
         "number": 2
-      },
-      {
-        "name": "room1",
-        "number": 2
-      },
-      {
-        "name": "room2",
-        "number": 2
-      },
-      {
-        "name": "kitchen",
-        "number": 3
       }
+
     ],
     "KOCOM_ROOM": [
       "livingroom",
       "bedroom",
-      "room1",
-      "room2",
-      "kitchen"
+      "room1"
     ],
     "KOCOM_ROOM_THERMOSTAT": [
       "livingroom",
       "bedroom",
       "room1",
-      "room2"
+      "room2",
+      "room3"
     ]
   },
   "schema": {
