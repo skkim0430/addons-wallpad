@@ -7,10 +7,15 @@ ENV LANG C.UTF-8
 COPY run.sh makeconf.sh rs485.py /
 
 # Install requirements for add-on
-RUN apt-get update && apt-get -y install jq
-RUN python3 -m pip install pyserial
-RUN python3 -m pip install paho-mqtt
-RUN python3 -m pip install typing_extensions
+#RUN apt-get update && apt-get -y install jq
+#RUN python3 -m pip install pyserial
+#RUN python3 -m pip install paho-mqtt
+#RUN python3 -m pip install typing_extensions
+# pip 설치 (필요한 경우)
+RUN apt-get update && apt-get install -y python3-pip
+
+# 패키지 설치
+RUN pip install pyserial paho-mqtt typing_extensions
 
 WORKDIR /share
 
