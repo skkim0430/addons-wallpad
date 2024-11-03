@@ -33,14 +33,14 @@ INIT_TEMP = 22
 # 환풍기 초기속도 ['low', 'medium', 'high']
 DEFAULT_SPEED = 'medium'
 # 조명 / 플러그 갯수
-KOCOM_LIGHT_SIZE            = {'livingroom': 3, 'bedroom': 2, 'room1': 2, 'room2': 2, 'kitchen': 3}
-KOCOM_PLUG_SIZE             = {'livingroom': 2, 'bedroom': 2, 'room1': 2, 'room2': 2, 'kitchen': 2}
+KOCOM_LIGHT_SIZE            = {'livingroom': 3, 'bedroom': 2, 'room1': 0, 'room2': 0, 'kitchen': 0}
+KOCOM_PLUG_SIZE             = {'livingroom': 2, 'bedroom': 2, 'room1': 0, 'room2': 0, 'kitchen': 0}
 
 # 방 패킷에 따른 방이름 (패킷1: 방이름1, 패킷2: 방이름2 . . .)
 # 월패드에서 장치를 작동하며 방이름(livingroom, bedroom, room1, room2, kitchen 등)을 확인하여 본인의 상황에 맞게 바꾸세요
 # 조명/콘센트와 난방의 방패킷이 달라서 두개로 나뉘어있습니다.
-KOCOM_ROOM                         = {'00': 'livingroom', '01': 'bedroom', '02': 'room2', '03': 'room1', '04': 'kitchen'}
-KOCOM_ROOM_THERMOSTAT       = {'00': 'livingroom', '01': 'bedroom', '02': 'room1', '03': 'room2'}
+KOCOM_ROOM                  = {'00': 'livingroom', '01': 'bedroom'}
+KOCOM_ROOM_THERMOSTAT       = {'00': 'livingroom', '01': 'bedroom', '02': 'room1', '03': 'room2', '04': 'room3'}
 
 # TIME 변수(초)
 SCAN_INTERVAL = 300         # 월패드의 상태값 조회 간격
