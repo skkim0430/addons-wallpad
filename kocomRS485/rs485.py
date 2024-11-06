@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 '''
 python -m pip install pyserial
-python -m pip install paho-mqtt
+python -m pip install --upgrade paho-mqtt
 python -m pip install typing_extensions
 '''
 import os
