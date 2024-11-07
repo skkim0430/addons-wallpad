@@ -96,7 +96,7 @@ if os.path.isfile(option_file):
 # HA MQTT Discovery
 HA_PREFIX = 'homeassistant'
 HA_SWITCH = 'switch'
-HA_LIGHT = 'light'
+HA_LIGHT = 'switch'
 HA_CLIMATE = 'climate'
 HA_SENSOR = 'sensor'
 HA_FAN = 'fan'
