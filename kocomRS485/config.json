@@ -29,7 +29,7 @@
       "device": "kocom"
     },
     "Serial": {
-      "port1": "/dev/ttyUSB0"
+      "port1": "/dev/ttyUSB1"
     },
     "SerialDevice": {
       "port1": "kocom"
@@ -50,8 +50,8 @@
     },
     "Advanced": {
       "INIT_TEMP": 22,
-      "SCAN_INTERVAL": 300,
-      "SCANNING_INTERVAL": 0.8,
+      "SCAN_INTERVAL": 600,
+      "SCANNING_INTERVAL": 3,
       "DEFAULT_SPEED" : "medium",
       "LOGLEVEL" : "info"
     },
@@ -63,18 +63,7 @@
       {
         "name": "bedroom",
         "number": 2
-      },
-      {
-        "name": "room1",
-        "number": 0
-      },
-      {
-        "name": "room2",
-        "number": 0
-      },
-      {
-        "name": "kitchen",
-        "number": 0
+     
       }
     ],
     "KOCOM_PLUG_SIZE": [
@@ -85,18 +74,7 @@
       {
         "name": "bedroom",
         "number": 2
-      },
-      {
-        "name": "room1",
-        "number": 0
-      },
-      {
-        "name": "room2",
-        "number": 0
-      },
-      {
-        "name": "kitchen",
-        "number": 0
+     
       }
     ],
     "KOCOM_ROOM": [
