@@ -2,7 +2,7 @@
 '''
 python -m pip install pyserial
 python -m pip istall paho-mqtt
-python -m pip install --upgrade paho-mqtt
+# python -m pip install --upgrade paho-mqtt
 python -m pip install typing_extensions
 '''
 import os
@@ -44,8 +44,8 @@ KOCOM_ROOM                  = {'00': 'livingroom', '01': 'bedroom'}
 KOCOM_ROOM_THERMOSTAT       = {'00': 'livingroom', '01': 'bedroom', '02': 'room1', '03': 'room2', '04': 'room3'}
 
 # TIME 변수(초)
-SCAN_INTERVAL = 300         # 월패드의 상태값 조회 간격
-SCANNING_INTERVAL = 0.8     # 상태값 조회 시 패킷전송 간격
+SCAN_INTERVAL = 600         # 월패드의 상태값 조회 간격
+SCANNING_INTERVAL = 3     # 상태값 조회 시 패킷전송 간격
 ####################### Start Here by Zooil ###########################
 option_file = '/data/options.json'                                                                                             
 if os.path.isfile(option_file):                                                                                                
@@ -373,7 +373,7 @@ class Kocom(rs485):
     def connect_mqtt(self, server, name):
         mqtt_client = mqtt.Client()
         mqtt_client.on_message = self.on_message
-        #mqtt_client.on_publish = self.on_publish
+        # mqtt_client.on_publish = self.on_publish
         mqtt_client.on_subscribe = self.on_subscribe
         mqtt_client.on_connect = self.on_connect
 
@@ -552,7 +552,7 @@ class Kocom(rs485):
                 'name': '{}_{}_{}'.format(self._name, 'wallpad', DEVICE_ELEVATOR),
                 'cmd_t': '{}/{}/{}_{}/set'.format(HA_PREFIX, HA_SWITCH, 'wallpad', DEVICE_ELEVATOR),
                 'stat_t': '{}/{}/{}/state'.format(HA_PREFIX, HA_SWITCH, 'wallpad'),
-                'val_tpl': '{{ value_json.' + DEVICE_ELEVATOR + ' }}',
+                'stat_val_tpl': '{{ value_json.' + DEVICE_ELEVATOR + ' }}',
                 'ic': 'mdi:elevator',
                 'pl_on': 'on',
                 'pl_off': 'off',
@@ -578,7 +578,7 @@ class Kocom(rs485):
                 'name': '{}_{}_{}'.format(self._name, 'wallpad', DEVICE_GAS),
                 'cmd_t': '{}/{}/{}_{}/set'.format(HA_PREFIX, HA_SWITCH, 'wallpad', DEVICE_GAS),
                 'stat_t': '{}/{}/{}_{}/state'.format(HA_PREFIX, HA_SWITCH, 'wallpad', DEVICE_GAS),
-                'val_tpl': '{{ value_json.' + DEVICE_GAS + ' }}',
+                'stat_val_tpl': '{{ value_json.' + DEVICE_GAS + ' }}',
                 'ic': 'mdi:gas-cylinder',
                 'pl_on': 'on',
                 'pl_off': 'off',
@@ -603,7 +603,7 @@ class Kocom(rs485):
             ha_payload = {
                 'name': '{}_{}_{}'.format(self._name, 'wallpad', DEVICE_GAS),
                 'stat_t': '{}/{}/{}_{}/state'.format(HA_PREFIX, HA_SENSOR, 'wallpad', DEVICE_GAS),
-                'val_tpl': '{{ value_json.' + DEVICE_GAS + ' }}',
+                'stat_val_tpl': '{{ value_json.' + DEVICE_GAS + ' }}',
                 'ic': 'mdi:gas-cylinder',
                 'uniq_id': '{}_{}_{}'.format(self._name, 'wallpad', DEVICE_GAS),
                 'device': {
@@ -686,7 +686,7 @@ class Kocom(rs485):
                                 'name': '{}_{}_{}'.format(self._name, room, sub_device),
                                 'cmd_t': '{}/{}/{}_{}/set'.format(HA_PREFIX, HA_SWITCH, room, sub_device),
                                 'stat_t': '{}/{}/{}/state'.format(HA_PREFIX, HA_SWITCH, room),
-                                'val_tpl': '{{ value_json.' + str(sub_device) + ' }}',
+                                'stat_val_tpl': '{{ value_json.' + str(sub_device) + ' }}',
                                 'ic': 'mdi:power-socket-eu',
                                 'pl_on': 'on',
                                 'pl_off': 'off',
@@ -1123,7 +1123,7 @@ class Grex:
     def connect_mqtt(self, server, name):
         mqtt_client = mqtt.Client()
         mqtt_client.on_message = self.on_message
-        #mqtt_client.on_publish = self.on_publish
+        # mqtt_client.on_publish = self.on_publish
         mqtt_client.on_subscribe = self.on_subscribe
         mqtt_client.on_connect = self.on_connect
 
@@ -1216,7 +1216,7 @@ class Grex:
         ha_payload = {
             'name': '{}_{}_mode'.format(self._name, DEVICE_FAN),
             'stat_t': '{}/{}/{}_{}/state'.format(HA_PREFIX, HA_SENSOR, 'grex', DEVICE_FAN),
-            'val_tpl': '{{ value_json.' + DEVICE_FAN + '_mode }}',
+            'stat_val_tpl': '{{ value_json.' + DEVICE_FAN + '_mode }}',
             'ic': 'mdi:play-circle-outline',
             'uniq_id': '{}_{}_{}_mode'.format(self._name, 'grex', DEVICE_FAN),
             'device': {
@@ -1234,7 +1234,7 @@ class Grex:
         ha_payload = {
             'name': '{}_{}_speed'.format(self._name, DEVICE_FAN),
             'stat_t': '{}/{}/{}_{}/state'.format(HA_PREFIX, HA_SENSOR, 'grex', DEVICE_FAN),
-            'val_tpl': '{{ value_json.' + DEVICE_FAN + '_speed }}',
+            'stat_val_tpl': '{{ value_json.' + DEVICE_FAN + '_speed }}',
             'ic': 'mdi:speedometer',
             'uniq_id': '{}_{}_{}_speed'.format(self._name, 'grex', DEVICE_FAN),
             'device': {
