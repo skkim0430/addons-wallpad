@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 '''
 python -m pip install pyserial
-python -m pip istall paho-mqtt
-# python -m pip install --upgrade paho-mqtt
+python -m pip install paho-mqtt
+python -m pip install --upgrade paho-mqtt
 python -m pip install typing_extensions
 '''
 import os
@@ -371,7 +371,7 @@ class Kocom(rs485):
             logging.info('[Serial Write] Connection Error')
 
     def connect_mqtt(self, server, name):
-        mqtt_client = mqtt.Client(mqtt.CallbackAPIVersion.VERSION1)
+        mqtt_client = mqtt.Client(mqtt.CallbackAPIVersion.VERSION.V3_1_1)
         mqtt_client.on_message = self.on_message
         # mqtt_client.on_publish = self.on_publish
         mqtt_client.on_subscribe = self.on_subscribe
@@ -1121,7 +1121,7 @@ class Grex:
         _t5.start()
 
     def connect_mqtt(self, server, name):
-        mqtt_client = mqtt.Client(mqtt.CallbackAPIVersion.VERSION1)
+        mqtt_client = mqtt.Client(mqtt.CallbackAPIVersion.VERSION.V3_1_1)
         mqtt_client.on_message = self.on_message
         # mqtt_client.on_publish = self.on_publish
         mqtt_client.on_subscribe = self.on_subscribe
