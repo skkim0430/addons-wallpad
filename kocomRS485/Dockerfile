@@ -7,8 +7,8 @@ ENV LANG C.UTF-8
 COPY run.sh makeconf.sh rs485.py /
 
 # Install requirements for add-on
-RUN apt-get update && apt-get install -y python3-pip
 RUN apt-get update && apt-get -y install jq
+RUN apt-get update && apt-get install -y python3-pip
 RUN python3 -m pip install pyserial
 RUN python3 -m pip install paho-mqtt
 RUN python3 -m pip install --upgrade paho-mqtt
